@@ -1,0 +1,24 @@
+import os
+import subprocess
+
+def run_command(command):
+    result = subprocess.run(command, shell=True, capture_output=True, text=True)
+    print(result.stdout)
+    print(result.stderr)
+    return result
+
+# Change to the repository directory
+repo_path = '/Users/sierragordon/Documents/Attention-Blitz'
+if not os.path.exists(repo_path):
+    print(f"Directory {repo_path} does not exist.")
+else:
+    os.chdir(repo_path)
+
+    # Stage the changes
+    run_command('git add .')
+
+    # Commit the changes with your new commit message
+    run_command('git commit -m "Your new commit message"')
+
+    # Push the changes to the remote repository using PAT
+    run_command('git push https://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@github.com/sisi195/Attention-Blitz.git')
