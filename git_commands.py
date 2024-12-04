@@ -1,17 +1,29 @@
-!DOCTYPE py>
-<!-- saved from url=(0088)https://github.com/sisi195/Attention-Blitz/blob/main/new_directory/mkdir%20new_directory -->
-<html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" data-a11y-animated-images="system" data-a11y-link-underlines="true" data-qb-installed="true" data-js-focus-visible="" data-turbo-loaded=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">.turbo-progress-bar {
-  position: fixed;
-  display: block;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: #0076ff;
-  z-index: 2147483647;
-  transition:
-    width 300ms ease-out,
-    opacity 150ms 150ms ease-in;
-  transform: translate3d(0, 0, 0);
-}
-</style>
+import os
+import subprocess
+
+def run_command(command):
+    result = subprocess.run(command, shell=True, capture_output=True, text=True)
+    print(result.stdout)
+    print(result.stderr)
+    return result
+
+# Define the repository path
+repo_path = '/Users/sierragordon/Documents/git/Attention-Blitz'
+
+# Create the directory if it does not exist
+if not os.path.exists(repo_path):
+    os.makedirs(repo_path)
+    print(f"Created directory {repo_path}")
+
+# Change to the repository directory
+os.chdir(repo_path)
+
+# Stage the changes
+run_command('git add .')
+
+# Commit the changes with your new commit message
+run_command('git commit -m "Your new commit message"')
+
+# Push the changes to the remote repository using PAT
+run_command('git push https://<your_personal_access_token>@github.com/sisi195/Attention-Blitz.git')
     
