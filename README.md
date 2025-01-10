@@ -1,5 +1,6 @@
 # Attention-Blitz
-This project delves into ADHD symptoms using the HYPERAKTIV dataset, focusing on cognitive domains such as attention, processing speed, executive function, verbal memory, reading skills, social cognition, and arithmetic abilities.
+
+In this project, I analyzed a dataset to gain insights into the health metrics of patients taking antidepressants. The dataset was cleaned, manipulated, and visualized using Python. The goal was to understand the demographic patterns and health outcomes of patients on antidepressants
 
 ## Dataset
 
